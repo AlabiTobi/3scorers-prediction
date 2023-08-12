@@ -15,13 +15,20 @@ export const OverallContainer = styled.div`
   width: 100%;
   height: 100vh;
   min-height: 100%;
+  background: #008F8F;
+  padding: ${(props) => (props.padding && props.padding)};
 `;
 
 export const NormalFont = styled.p`
   color: #000;
   font-size: 16px;
   font-weight: ${(props) => (props.fontweight ? props.fontweight : "400")};
-  line-height: 24px;
+  line-height: 20px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+    line-height: 14px;
+  }
 `;
 
 export const LabelFont = styled.label`
@@ -35,27 +42,26 @@ export const LabelFont = styled.label`
 export const AuthInputWrapper = styled.section`
   width: 360px;
   height: 36px;
-  /* border-radius: 8px;
-  border: 1.2px solid #000; */
+  display: flex;
+  border-radius: 8px;
+  outline: 1.3px solid #000;
 `;
 
 export const AuthInput = styled.input`
   height: inherit;
   width: 100%;
-  border: 1.3px solid #000;
-  border-radius: 8px;
   outline: transparent;
   padding: 0.2rem 0.5rem;
   background-color: transparent;
   font-size: 12px;
   color: #000;
+  border: none;
 `;
 
 export const VisibilityWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  right: 12px;
-  transform: translateY(-50%);
+  margin: auto;
+  top: auto;
+  margin-right: 3%;
   cursor: pointer;
 `;
 

@@ -7,11 +7,13 @@ import useForm from "../../hooks/useForm";
 import { Validation } from "../../utils/validation";
 import AuthButton from "../../components/AuthButton";
 import { ImSpinner6 } from "react-icons/im";
+import AuthHandler from "../../utils/AuthHandler";
 
 export const SignUp = () => {
     const [loading, setLoading] = useState(false);
-    const {inputs, formErrors, allFieldsFilled, disabledButton, handleInputChange} = useForm({firstName: "",
-    lastName: "", email: "", username: "", password: "", repeat_password: ""}, Validation);
+    const {inputs, formErrors, disabledButton, setInputs, setDisabledButton,
+        setFormErrors, handleInputChange} = useForm({firstName: "",
+        lastName: "", email: "", username: "", password: "", repeat_password: ""}, Validation, "signup");
 
     const inputField = [
         {
@@ -57,6 +59,12 @@ export const SignUp = () => {
           error: formErrors.repeat_password,
         },
       ];
+    
+    const { handleAuth } = AuthHandler({
+        apiUrl: "api", path: "/login",
+        inputs, setInputs, formType: "signup",
+        setLoading, setDisabledButton, setFormErrors
+    })
 
     return (
         <OverallContainer>
@@ -67,7 +75,7 @@ export const SignUp = () => {
                     <NormalFont>Join the community and have fun predicting!</NormalFont>
                 </FirstHalf>
                 <SecondHalf>
-                    <SignUpForm>
+                    <SignUpForm onSubmit={handleAuth}>
                        {inputField.map((field, index) => (
                         <AuthInputComponent key={index} placeholder={field.placeholder}
                             label={field.label} name={field.name} type={field.type}

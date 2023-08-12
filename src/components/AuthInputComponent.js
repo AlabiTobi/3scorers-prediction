@@ -16,7 +16,7 @@ export const AuthInputComponent = ({ label, name, type, value, onChange, error }
         <AuthInput
           placeholder={`Enter your ${label?.toLowerCase()}`}
           name={name}
-          type={showPassword ? "text" : type}
+          type={type === "password" && showPassword ? "text" : type}
           value={value}
           onChange={onChange}
         />

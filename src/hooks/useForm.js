@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-const useForm = (initialInputs, validationFunction) => {
+const useForm = (initialInputs, validationFunction, formType) => {
   const [inputs, setInputs] = useState(initialInputs);
   const [formErrors, setFormErrors] = useState({});
-  const [allFieldsFilled, setAllFieldsFilled] = useState(false);
   const [disabledButton, setDisabledButton] = useState(true);
 
   const handleInputChange = (e) => {
@@ -11,20 +10,16 @@ const useForm = (initialInputs, validationFunction) => {
     const newInputs = { ...inputs, [name]: value };
     setInputs(newInputs);
 
-    const errors = validationFunction(newInputs);
+    const errors = validationFunction(newInputs, formType);
     setFormErrors(errors);
 
     const isFilled = Object?.values(newInputs)?.every((val) => val?.trim() !== "");
-    setAllFieldsFilled(isFilled);
     setDisabledButton(!isFilled || Object?.keys(errors)?.length > 0);
   };
 
-  return {
-    inputs,
-    formErrors,
-    allFieldsFilled,
-    disabledButton,
-    handleInputChange,
+  return { inputs, formErrors, setFormErrors,
+    setDisabledButton, setInputs,
+    disabledButton, handleInputChange,
   };
 };
 
