@@ -1,6 +1,11 @@
+import Metrics from "../dashComponents/Metrics";
+import { MainView } from "../dashComponents/dashStyled";
+
 const Overview = () => {
   return (
-    <div>Overview</div>
+    <MainView>
+      <Metrics />
+    </MainView>
   )
 };
 

@@ -60,7 +60,7 @@ export const SecondHalf = styled(FirstHalf)`
 `;
 
 export const HugeHeaderFont = styled.h1`
-    color: #FFF;
+    color: ${(props) => (props.color ? props.color : "#FFF")};
     font-size: 40px;
     font-weight: 700;
     line-height: 36px;

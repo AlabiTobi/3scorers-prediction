@@ -1,8 +1,15 @@
 import { sidebardata } from "../data/Sidebardata";
 import logo from "../../assets/3scorerslogo.png"
 import { ItemsWrap, LogoWrap, SidebarLink, SidebarWrapper } from "./dashStyled";
+import { useLocation } from "react-router-dom";
 
 const DashSidebar = () => {
+    const location = useLocation();
+
+    const isActive = (path) => {
+        return location.pathname === path;
+    };
+
     return (
         <SidebarWrapper>
             <LogoWrap >
@@ -13,7 +20,9 @@ const DashSidebar = () => {
                 {sidebardata.map((item, index) => {
                     return (
                         <div key={index}>
-                            <SidebarLink to={item.path ?? null}>{item.icon} {item.title}</SidebarLink>
+                            <SidebarLink className={isActive(item.path) && "active"}
+                             to={item.path ?? null}>{item.icon} {item.title}
+                             </SidebarLink>
                         </div>
                     )
                 })}

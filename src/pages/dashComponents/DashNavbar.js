@@ -1,10 +1,16 @@
 import { NavbarWrapper } from "./dashStyled";
+import { useLocation } from "react-router-dom";
+import { dynamicHeader } from "../../utils/helpers";
+import { HugeHeaderFont } from "../../auth/signUp/SignUpStyled";
+import { DynamicHeaderFont } from "../../GlobalStyles";
 
 const DashNavbar = () => {
+    const location = useLocation();
+
     return (
         <NavbarWrapper>
-            <div>Logo</div>
-            <div>User Name</div>
+            <DynamicHeaderFont>{dynamicHeader(location.pathname)}</DynamicHeaderFont>
+            <div><strong>Rex Steven</strong> <br /> Administrator</div>
         </NavbarWrapper>
     )
 };

@@ -1,22 +1,26 @@
+import { BsFillGrid1X2Fill } from "react-icons/bs"
+import { TbUsers, TbLogout } from "react-icons/tb";
+import { LiaUsersSolid } from "react-icons/lia"
+
 export const sidebardata = [
     {
         title: "Overview",
         path: "/overview",
-        icon: "boy"
+        icon: <BsFillGrid1X2Fill />
     },
     {
         title: "Users",
         path: "/users",
-        icon: "ant"
+        icon: <TbUsers />
     },
     {
         title: "Admins",
         path: "/admins",
-        icon: "dog"
+        icon: <LiaUsersSolid size="1.2rem"/>
     },
     {
         title: "Logout",
-        // path: "/",
-        icon: "ram"
+        path: "/login",
+        icon: <TbLogout size="1.2rem"/>
     },
 ];

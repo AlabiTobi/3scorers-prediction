@@ -1,6 +1,8 @@
+import { MainView } from "../dashComponents/dashStyled";
+
 const Admins = () => {
   return (
-    <div>Admins</div>
+    <MainView>Admins</MainView>
   )
 };
 

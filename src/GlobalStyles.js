@@ -20,7 +20,7 @@ export const OverallContainer = styled.div`
 `;
 
 export const NormalFont = styled.p`
-  color: #000;
+  color: ${(props) => (props.color ? props.color : "#000")};
   font-size: 16px;
   font-weight: ${(props) => (props.fontweight ? props.fontweight : "400")};
   line-height: 20px;
@@ -37,6 +37,24 @@ export const LabelFont = styled.label`
   font-weight: 400;
   line-height: 24px;
   display: flex;
+`;
+
+export const SubHeader = styled.p`
+  color: ${(props) => (props.color ? props.color : "#FFF")};
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+  display: flex;
+
+  @media screen and (max-width: 960px) {
+        font-size: 22px;
+        line-height: 20px;
+        font-weight: 400;
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+        line-height: 16px;
+    }
 `;
 
 export const AuthInputWrapper = styled.section`
@@ -94,6 +112,24 @@ export const FormButton = styled.button`
     border: none;
     cursor: not-allowed;
   }
+`;
+
+export const DynamicHeaderFont = styled.h1`
+    color: #008F8F;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+        font-size: 26px;
+        line-height: 24px;
+        margin-bottom: 0.5rem;
+    }
+    @media screen and (max-width: 480px) {
+        font-size: 20px;
+        line-height: 16px;
+    }
 `;
 
 export default GlobalStyle;
