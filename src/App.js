@@ -10,6 +10,7 @@ function App() {
   return (
       <>
         <Routes>
+          <Route path="/" element={<SignUp />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/overview" element={<DashboardLayout><Overview /></DashboardLayout>} />

@@ -142,6 +142,7 @@ export const ViewButton = styled.button`
   align-items: center;
   justify-content: center;
   background: ${(props) => (props.background ? props.background : "#51FFFF" )};
+  color: ${(props) => (props.color ? props.color : "#000" )};
   border: none;
   cursor: pointer;
   transition: 0.2s;

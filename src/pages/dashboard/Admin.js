@@ -1,9 +1,17 @@
+import Lists from "../dashComponents/Lists";
+import SearchNames from "../dashComponents/SearchNames";
 import { MainView } from "../dashComponents/dashStyled";
+import { ManinViewContainer } from "../dashComponents/secondDashStyled";
 
-const Admins = () => {
+const Users = () => {
   return (
-    <MainView>Admins</MainView>
+    <MainView>
+      <ManinViewContainer>
+        <SearchNames role="Admin"/>
+        <Lists width="100%" btnBg="#51FFFF" btnColor="#000" roleName="Admin's Name"/>
+      </ManinViewContainer>
+    </MainView>
   )
 };
 
-export default Admins;
+export default Users;

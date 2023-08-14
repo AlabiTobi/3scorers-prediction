@@ -9,8 +9,8 @@ const Overview = () => {
       <ManinViewContainer>
         <Metrics />
         <ListsContainer>
-          <Lists />
-          <Lists />
+          <Lists listOf="Users"/>
+          <Lists listOf="Admins"/>
         </ListsContainer>
       </ManinViewContainer>
     </MainView>

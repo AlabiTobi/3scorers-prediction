@@ -11,6 +11,13 @@ export const SidebarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    background: transparent;
+  }
 
   @media screen and (max-width: 960px) {
     width: 5%;
@@ -64,7 +71,17 @@ export const NavbarWrapper = styled.div`
   top: 0;
   width: 85%;
 
-  
+  section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  img {
+    background: blue;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+  }
   strong {
     font-size: 18px;
   }
@@ -84,6 +101,10 @@ export const NavbarWrapper = styled.div`
   }
   @media screen and (max-width: 350px) {
     width: 80%;
+
+    .dynamicHeaderFont {
+      display: none;
+    }
   }
 `;
 
@@ -145,7 +166,7 @@ export const MainView = styled.main`
   }
   @media screen and (max-width: 480px) {
     margin-top: 4rem;
-    padding: 1rem;
+    padding: 0.3rem;
   }
 `;
 
