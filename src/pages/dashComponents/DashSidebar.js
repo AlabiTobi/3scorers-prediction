@@ -21,7 +21,7 @@ const DashSidebar = () => {
                     return (
                         <div key={index}>
                             <SidebarLink className={isActive(item.path) && "active"}
-                             to={item.path ?? null}>{item.icon} {item.title}
+                             to={item.path ?? null}>{item.icon} <span>{item.title}</span>
                              </SidebarLink>
                         </div>
                     )

@@ -10,7 +10,6 @@ const DashboardLayout = ({children}) => {
                 <DashNavbar/>
                 {children}
             </Content>
-            
         </Wrapper>
     )
 };

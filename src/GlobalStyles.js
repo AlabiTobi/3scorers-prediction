@@ -49,7 +49,7 @@ export const SubHeader = styled.p`
   @media screen and (max-width: 960px) {
         font-size: 22px;
         line-height: 20px;
-        font-weight: 400;
+        font-weight: 500;
     }
     @media screen and (max-width: 768px) {
         font-size: 16px;
@@ -130,6 +130,36 @@ export const DynamicHeaderFont = styled.h1`
         font-size: 20px;
         line-height: 16px;
     }
+    @media screen and (max-width: 360px) {
+        font-size: 16px;
+        line-height: 14px;
+    }
+`;
+
+export const ViewButton = styled.button`
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: ${(props) => (props.background ? props.background : "#51FFFF" )};
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 5px;
+  font-size: 14px;
+
+  &:hover {
+    background: #afffff;
+  }
+
+  @media screen and (max-width: 960px) {
+    font-size: 12px;
+    padding: 5px;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 9px;
+    padding: 3px;
+  }
 `;
 
 export default GlobalStyle;

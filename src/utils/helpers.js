@@ -7,3 +7,7 @@ export const dynamicHeader = (pathname) => {
         return "Admins"
     }
 };
+
+export const dynamicLocation = (location, path) => {
+    return location?.pathname === path;
+};

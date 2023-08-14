@@ -9,7 +9,7 @@ const DashNavbar = () => {
 
     return (
         <NavbarWrapper>
-            <DynamicHeaderFont>{dynamicHeader(location.pathname)}</DynamicHeaderFont>
+            <DynamicHeaderFont>{dynamicHeader(location.pathname) ?? "Dashboard"}</DynamicHeaderFont>
             <div><strong>Rex Steven</strong> <br /> Administrator</div>
         </NavbarWrapper>
     )

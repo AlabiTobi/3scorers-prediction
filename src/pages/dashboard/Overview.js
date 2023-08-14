@@ -1,10 +1,18 @@
+import Lists from "../dashComponents/Lists";
 import Metrics from "../dashComponents/Metrics";
-import { MainView } from "../dashComponents/dashStyled";
+import { ListsContainer, MainView } from "../dashComponents/dashStyled";
+import { ManinViewContainer } from "../dashComponents/secondDashStyled";
 
 const Overview = () => {
   return (
     <MainView>
-      <Metrics />
+      <ManinViewContainer>
+        <Metrics />
+        <ListsContainer>
+          <Lists />
+          <Lists />
+        </ListsContainer>
+      </ManinViewContainer>
     </MainView>
   )
 };

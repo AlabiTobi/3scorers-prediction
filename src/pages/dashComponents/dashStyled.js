@@ -2,13 +2,25 @@ import { styled } from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const SidebarWrapper = styled.div`
+  position: fixed;
   width: 15%;
   background:#008F8F;
   color: #FFF;
   height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+
+  @media screen and (max-width: 960px) {
+    width: 5%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 10%;
+  }
+  @media screen and (max-width: 350px) {
+    width: 20%;
+  }
 `;
 
 export const SidebarLink = styled(NavLink)`
@@ -31,6 +43,14 @@ export const SidebarLink = styled(NavLink)`
     background: #51FFFF;
     color: #303030;
   }
+
+  @media screen and (max-width: 960px) {
+    padding: 0.1rem;
+    justify-content: center;
+    span {
+      display: none;
+    }
+  }
 `;
 
 export const NavbarWrapper = styled.div`
@@ -40,18 +60,57 @@ export const NavbarWrapper = styled.div`
   padding: 1.5rem 2rem;
   background:#FFF;
   box-shadow: 2px 8px 20px 0px rgba(181, 181, 181, 0.20);
+  position: fixed;
+  top: 0;
+  width: 85%;
+
   
   strong {
     font-size: 18px;
+  }
+  @media screen and (max-width: 960px) {
+    width: 95%;
+  }
+   @media screen and (max-width: 768px) {
+    padding: 1.5rem;
+    width: 90%;
+
+    div, strong {
+    font-size: 14px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    padding: 1rem;
+  }
+  @media screen and (max-width: 350px) {
+    width: 80%;
   }
 `;
 
 export const Wrapper = styled.section`
   display: flex;
+  background: #008F8F;
 `;
 
 export const Content = styled.div`
   flex: 1;
+  top: 0;
+  position: relative;
+  width: 85%;
+  margin-left: 15%;
+
+  @media screen and (max-width: 960px) {
+    margin-left: 5%;
+    width: 95%;
+  }
+   @media screen and (max-width: 768px) {
+    margin-left: 10%;
+    width: 90%;
+  }
+   @media screen and (max-width: 350px) {
+    margin-left: 20%;
+    width: 80%;
+  }
 `;
 
 export const LogoWrap = styled.section`
@@ -63,6 +122,10 @@ export const LogoWrap = styled.section`
   padding: 1.5rem;
   margin-top: 0.5rem;
   align-self: center;
+
+  @media screen and (max-width: 960px) {
+    padding: 0.1rem;
+  }
 `;
 
 export const ItemsWrap = styled.section`
@@ -73,8 +136,17 @@ export const MainView = styled.main`
   background: #F4F4F4;
   width: 100%;
   height: 100vh;
-  min-height: 100%;
+  min-height: 89%;
   padding: 2rem;
+  margin-top: 5rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 1.5rem;
+  }
+  @media screen and (max-width: 480px) {
+    margin-top: 4rem;
+    padding: 1rem;
+  }
 `;
 
 export const MetricsContainer = styled.section`
@@ -92,11 +164,11 @@ export const MetricsContainer = styled.section`
   height: 155px;
   }
   @media screen and (max-width: 960px) {
-  width: 50%;
+  width: 60%;
   height: 140px;
   }
   @media screen and (max-width: 480px) {
-  width: 90%;
+  width: 100%;
   }
 `;
 
@@ -115,5 +187,20 @@ export const IconContainer = styled.div`
 
 export const MetricsWrapper = styled.section`
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
+
+  @media screen and (max-width: 768px) {
+    gap: 0.5rem;
+  }
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+  }
+`;
+
+export const ListsContainer = styled(MetricsWrapper)`
+  margin-top: 0.5rem;
+  
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
