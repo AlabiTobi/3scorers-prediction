@@ -2,9 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { Validation } from "../utils/validation";
+import { useDispatch } from "react-redux";
+import { setDetails } from "../redux/slices/loggedInSlice";
 
-const AuthHandler = ({ apiUrl, path, inputs, setInputs, setLoading, setFormErrors, setDisabledButton, formType }) => {
+const AuthHandler = ({ apiUrl, path, inputs, setInputs, setLoading, setFormErrors, setDisabledButton, formType, successful }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const clearInputFields = () => {
     const emptyInputs = Object.fromEntries(
@@ -15,31 +18,30 @@ const AuthHandler = ({ apiUrl, path, inputs, setInputs, setLoading, setFormError
 
   const handleAuth = async (e) => {
     e.preventDefault();
-    console.log(inputs);
     const errors = Validation(inputs, formType);
     if (Object.keys(errors).length === 0) {
       setLoading(true);
     } else {
       setFormErrors(errors);
-      setDisabledButton(true);
     }
     try {
+      setDisabledButton(true);
       const { data } = await axios.post(
         apiUrl,
         {...inputs},
         { headers: { "Content-Type": "application/json" } }
       );
-      toast.success("Sign Up Successful!");
+      formType === "login" && dispatch(setDetails(data))
+      toast.success(successful);
       clearInputFields();
       navigate(path);
-      console.log(data);
     } catch (error) {
+      setDisabledButton(false);
       console.log(error);
-      console.log(error.message);
-      toast.error(error.message);
+      console.log(error.response.data.data);
+      toast.error(error.response.data.data);
     } finally {
       setLoading(false);
-      setDisabledButton(false);
     }
   };
 

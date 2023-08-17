@@ -2,20 +2,20 @@ import Lists from "./Lists";
 import { IconWrapper, SearchContainer, SearchInput, SearchWrapper } from "./secondDashStyled";
 import { BiSearch } from "react-icons/bi"
 
-const SearchNames = ({role, roleName, fetchedRoles, searchTerm, setSearchTerm, searchResults, setSearchResults}) => {
-  const handleSearch = (event) => {
+const SearchNamesUser = ({roleUser, roleNameUser, fetchedRolesUser, searchTermUser, setSearchTermUser, searchResultsUser, setSearchResultsUser}) => {
+  const handleSearchUser = (event) => {
     const keyword = event?.target?.value?.toLowerCase();
-    setSearchTerm(keyword);
+    setSearchTermUser(keyword);
 
     if (keyword.trim() === "") {
-      setSearchResults([]);
+      setSearchResultsUser([]);
     } else {
-      const filteredUsers = fetchedRoles?.filter(
+      const filteredUsers = fetchedRolesUser?.filter(
         (user) =>
           user?.firstName?.toLowerCase()?.includes(keyword) ||
           user?.lastName?.toLowerCase()?.includes(keyword)
       );
-      setSearchResults(filteredUsers);
+      setSearchResultsUser(filteredUsers);
     }
   };
 
@@ -24,8 +24,8 @@ const SearchNames = ({role, roleName, fetchedRoles, searchTerm, setSearchTerm, s
       <SearchWrapper>
         <SearchContainer>
           <IconWrapper><BiSearch /></IconWrapper>
-          <SearchInput placeholder={`Search for ${role}`}
-           value={searchTerm} onChange={handleSearch}
+          <SearchInput placeholder={`Search for ${roleUser}`}
+           value={searchTermUser} onChange={handleSearchUser}
           />
         </SearchContainer>
         <select name="pets" id="pet-select">
@@ -34,11 +34,11 @@ const SearchNames = ({role, roleName, fetchedRoles, searchTerm, setSearchTerm, s
           <option value="inactive">Inactive</option>
         </select>
       </SearchWrapper>
-      {searchTerm !== "" &&
-          <Lists searchResults={searchResults} width="100%" btnBg="#51FFFF" btnColor="#000" roleName={roleName} />
+      {searchTermUser !== "" &&
+          <Lists searchResults={searchResultsUser} width="100%" btnBg="#51FFFF" btnColor="#000" roleName={roleNameUser} />
       }
     </>
   )
 };
 
-export default SearchNames;
+export default SearchNamesUser;

@@ -11,21 +11,37 @@ export const ListWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
 
+  .showMore {
+    color: #008F8F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.3rem;
+    
+     &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+     }
+  }
+
   @media screen and (max-width: 768px) {
     padding: 0.3rem;
   }
 `;
 export const SECTION = styled.section`
   width: ${(props) => (props.width ? props.width : "50%")};
+  margin-bottom: 2rem;
 
   @media screen and (max-width: 768px) {
     width: 100%;
+    margin-bottom: 1rem;
   }
 `;
 
 export const ManinViewContainer = styled.div`
   width: 100%;
   height: 100%;
+  min-height: 100%;
 `;
 
 export const EachList = styled.div`
@@ -45,6 +61,7 @@ export const EachList = styled.div`
   img {
     width: 50px;
     height: 50px;
+    background: #8f8d8d;
     border-radius: 10px;
   }
   @media screen and (max-width: 960px) {
@@ -81,7 +98,7 @@ export const EachList = styled.div`
 `;
 
 export const SubHeaderWrapper = styled.section`
-  margin-top: 3rem;
+  margin-top: 2rem;
 
   @media screen and (max-width: 960px) {
     margin-top: 1rem;
@@ -153,4 +170,11 @@ export const IconWrapper = styled.div`
   top: auto;
   margin-left: 3%;
   cursor: pointer;
+`;
+
+export const LoadingWrapper = styled.div`
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
 `;

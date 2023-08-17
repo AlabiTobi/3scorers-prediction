@@ -70,6 +70,7 @@ export const NavbarWrapper = styled.div`
   position: fixed;
   top: 0;
   width: 85%;
+  z-index: 2;
 
   section {
     display: flex;
@@ -77,7 +78,7 @@ export const NavbarWrapper = styled.div`
     gap: 5px;
   }
   img {
-    background: blue;
+    background: #8f8d8d;
     border-radius: 50px;
     width: 50px;
     height: 50px;
@@ -119,6 +120,7 @@ export const Content = styled.div`
   position: relative;
   width: 85%;
   margin-left: 15%;
+  background: #F4F4F4;
 
   @media screen and (max-width: 960px) {
     margin-left: 5%;
@@ -156,8 +158,7 @@ export const ItemsWrap = styled.section`
 export const MainView = styled.main`
   background: #F4F4F4;
   width: 100%;
-  height: 100vh;
-  min-height: 89%;
+  min-height: 100vh;
   padding: 2rem;
   margin-top: 5rem;
 
@@ -165,7 +166,7 @@ export const MainView = styled.main`
     padding: 1.5rem;
   }
   @media screen and (max-width: 480px) {
-    margin-top: 4rem;
+    margin-top: 6rem;
     padding: 0.3rem;
   }
 `;
@@ -220,6 +221,7 @@ export const MetricsWrapper = styled.section`
 
 export const ListsContainer = styled(MetricsWrapper)`
   margin-top: 0.5rem;
+  background: #F4F4F4;
   
   @media screen and (max-width: 768px) {
     flex-direction: column;

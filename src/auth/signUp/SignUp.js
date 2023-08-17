@@ -12,8 +12,10 @@ import AuthHandler from "../../utils/AuthHandler";
 export const SignUp = () => {
     const [loading, setLoading] = useState(false);
     const {inputs, formErrors, disabledButton, setInputs, setDisabledButton,
-        setFormErrors, handleInputChange} = useForm({firstName: "",
-        lastName: "", email: "", username: "", password: "", repeat_password: ""}, Validation, "signup");
+           setFormErrors, handleInputChange} = useForm({firstName: "",
+           lastName: "", email: "", username: "", password: "", repeat_password: ""}, Validation, "signup");
+
+    const signUpUrl = process.env.REACT_APP_SIGNUP_API_URL;
 
     const inputField = [
         {
@@ -61,8 +63,8 @@ export const SignUp = () => {
       ];
     
     const { handleAuth } = AuthHandler({
-        apiUrl: "api", path: "/login",
-        inputs, setInputs, formType: "signup",
+        apiUrl: signUpUrl, path: "/login",
+        successful: "Sign Up Successful!", inputs, setInputs, formType: "signup",
         setLoading, setDisabledButton, setFormErrors
     })
 

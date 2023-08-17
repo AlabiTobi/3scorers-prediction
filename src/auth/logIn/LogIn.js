@@ -1,5 +1,5 @@
 import { OverallContainer } from "../../GlobalStyles";
-import { SecondHalf, SignUpForm } from "../signUp/SignUpStyled";
+import { SignUpForm } from "../signUp/SignUpStyled";
 import { ColumnBody, Half1, Half2 } from "./LogInStyled";
 import logo from "../../assets/3scorerslogo.png"
 import { useState } from "react";
@@ -13,7 +13,9 @@ import AuthHandler from "../../utils/AuthHandler";
 export const LogIn = () => {
     const [loading, setLoading] = useState(false);
     const {inputs, formErrors, disabledButton, setInputs, setDisabledButton,
-        setFormErrors, handleInputChange} = useForm({email: "", password: "",}, Validation, "login");
+           setFormErrors, handleInputChange} = useForm({email: "", password: "",}, Validation, "login");
+
+    const logInUrl = process.env.REACT_APP_LOGIN_API_URL;
 
     const inputField = [
       {
@@ -33,8 +35,8 @@ export const LogIn = () => {
     ];
 
     const { handleAuth } = AuthHandler({
-        apiUrl: "api", path: "/dashboard",
-        inputs, setInputs, formType: "login",
+        apiUrl: logInUrl, path: "/overview",
+        successful: "Logged In Successfully", inputs, setInputs, formType: "login",
         setLoading, setDisabledButton, setFormErrors
     })
     return (

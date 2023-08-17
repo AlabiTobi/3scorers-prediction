@@ -3,22 +3,21 @@ import { IconContainer, MetricsContainer, MetricsWrapper, StatContainer } from "
 import { TbUsers } from "react-icons/tb";
 import { LiaUsersSolid } from "react-icons/lia"
 
-const metricsdata = [
-    {
-        role: "USERS",
-        amount: "1,000,000",
-        icon: <TbUsers style={{color: "#008F8F"}} size="1.5rem"/>,
-        background: "#004F4F",
-    },
-    {
-        role: "ADMINS",
-        amount: "970",
-        icon: <LiaUsersSolid style={{color: "#008F8F"}} size="1.6rem"/>,
-        background: "#008F8F",
-    },
-]
-
-const Metrics = () => {
+const Metrics = ({totalUsers, totalAdmins}) => {
+    const metricsdata = [
+        {
+            role: "USERS",
+            amount: totalUsers,
+            icon: <TbUsers style={{color: "#008F8F"}} size="1.5rem"/>,
+            background: "#004F4F",
+        },
+        {
+            role: "ADMINS",
+            amount: totalAdmins,
+            icon: <LiaUsersSolid style={{color: "#008F8F"}} size="1.6rem"/>,
+            background: "#008F8F",
+        },
+    ]
     return (
         <MetricsWrapper>
         {metricsdata.map((metric, index) => {

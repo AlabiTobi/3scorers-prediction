@@ -11,7 +11,9 @@ export const AuthInputComponent = ({ label, name, type, value, onChange, error }
 
   return (
     <div>
-      <LabelFont><span>{label}</span> {error && <ErrorText>{error}</ErrorText>}</LabelFont>
+      <LabelFont>
+        <span>{label}</span> {error && <ErrorText>{error}</ErrorText>}
+      </LabelFont>
       <AuthInputWrapper>
         <AuthInput
           placeholder={`Enter your ${label?.toLowerCase()}`}

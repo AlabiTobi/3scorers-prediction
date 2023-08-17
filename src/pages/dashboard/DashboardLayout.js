@@ -8,7 +8,9 @@ const DashboardLayout = ({children}) => {
             <DashSidebar />
             <Content>
                 <DashNavbar/>
+                <div style={{background: "#F4F4F4"}}>
                 {children}
+                </div>
             </Content>
         </Wrapper>
     )
