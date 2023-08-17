@@ -61,7 +61,7 @@ export const EachList = styled.div`
   img {
     width: 50px;
     height: 50px;
-    background: #8f8d8d;
+    background: #c7bdbd;
     border-radius: 10px;
   }
   @media screen and (max-width: 960px) {

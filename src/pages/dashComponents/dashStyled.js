@@ -78,7 +78,7 @@ export const NavbarWrapper = styled.div`
     gap: 5px;
   }
   img {
-    background: #8f8d8d;
+    background: #c7bdbd;
     border-radius: 50px;
     width: 50px;
     height: 50px;

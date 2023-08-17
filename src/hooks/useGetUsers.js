@@ -34,7 +34,7 @@ const useGetUsers = (setLoading) => {
         if (error.response.status === 401) {
           toast.error('Session expired, please Login again');
           navigate('/login');
-        }
+        } else {toast.error(error.response.data.data)}
       } finally {
         setLoading(false);
       }

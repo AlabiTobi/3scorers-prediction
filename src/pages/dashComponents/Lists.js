@@ -8,10 +8,7 @@ import logo from "../../assets/3scorerslogo.png";
 
 const Lists = ({ searchResults, width, fetchedRoles, showMore, userImg = logo, roleName, listOf, btnBg = "#FFF", btnColor = "#008F8F" }) => {
     const location = useLocation();
-    console.log(fetchedRoles);
-    console.log(fetchedRoles?.userRoles);
-    console.log(fetchedRoles?.adminRoles);
-
+    
     const renderUsersList = (users) => {
         return users?.slice(0, 5)?.map((user, index) => (
             <EachList key={index}>

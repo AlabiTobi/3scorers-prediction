@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 const DashNavbar = () => {
     const location = useLocation();
     const state = useSelector(state => state?.loggedIn);
-    console.log(state);
     const firstName = capitalizeFirstLetter(state?.message?.data?.firstName);
     const lastName = capitalizeFirstLetter(state?.message?.data?.lastName);
     const role = capitalizeFirstLetter(state?.message?.data?.role);
