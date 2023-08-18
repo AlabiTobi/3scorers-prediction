@@ -5,6 +5,7 @@ import Overview from "./pages/dashboard/Overview";
 import Users from "./pages/dashboard/Users";
 import Admins from "./pages/dashboard/Admin";
 import DashboardLayout from "./pages/dashboard/DashboardLayout";
+import NoPage from "./pages/NoPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/overview" element={<DashboardLayout><Overview /></DashboardLayout>} />
           <Route path="/users" element={<DashboardLayout><Users /></DashboardLayout>} />
           <Route path="/admins" element={<DashboardLayout><Admins /></DashboardLayout>} />
+          <Route path="*" element={<NoPage />} />
         </Routes>
       </>
   );
